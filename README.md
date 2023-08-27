@@ -12,8 +12,8 @@ nodejs 18.14.*
 ```
 
 You can either use nvm or [asdf](https://asdf-vm.com/) to manager node version.
-You can either use yarn or npm to install the dependencies.
 
+You can either use yarn or npm to install the dependencies.
 This project is built using yarn. If you're using npm then please run the following command from the root
 of this project.
     
