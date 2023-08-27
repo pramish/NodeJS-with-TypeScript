@@ -1,8 +1,17 @@
-const  { createServer } =  require("http");
-const  {Config} =  require("./config/config");
-const  {app} =  require("./index");
+const {createServer} = require("http");
 
-const startExpressServer = (port) => {
+const connectToMongoose = require("./src/database/Mongoose");
+const {Config} = require("./src/config/config");
+
+const {app} = require("./index");
+
+const startExpressServer = async (port) => {
+    const isDatabaseConnected = await connectToMongoose(Config.DATABASE_CONNECTION_STRING);
+
+    if (!isDatabaseConnected) {
+        return;
+    }
+
     const expressServer = createServer(app);
 
     expressServer.listen(port, () => {
