@@ -11,16 +11,19 @@ const {
 const {
   GetOnePostController,
 } = require("./src/controllers/GetOnePost.Controller");
+const {
+  DeletePostController,
+} = require("./src/controllers/DeletePost.Controller");
 
 app.use(express.json());
 
 app
   // Get one post
   .get("/api/v1/posts/post/:postId", GetOnePostController)
-
   // Get all posts
   .get("/api/v1/posts", GetAllPostsController)
-  // Get one post
+  // Delete post
+  .delete("/api/v1/posts/post/:postId", DeletePostController)
   // Create Post controller
   .post("/api/v1/posts", CreatePostController);
 
