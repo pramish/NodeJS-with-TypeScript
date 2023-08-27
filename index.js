@@ -14,6 +14,9 @@ const {
 const {
   DeletePostController,
 } = require("./src/controllers/DeletePost.Controller");
+const {
+  UpdatePostController,
+} = require("./src/controllers/UpdatePost.Conytoller");
 
 app.use(express.json());
 
@@ -24,6 +27,8 @@ app
   .get("/api/v1/posts", GetAllPostsController)
   // Delete post
   .delete("/api/v1/posts/post/:postId", DeletePostController)
+  // Update post
+  .put("/api/v1/posts/post/:postId", UpdatePostController)
   // Create Post controller
   .post("/api/v1/posts", CreatePostController);
 

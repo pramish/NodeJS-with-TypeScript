@@ -1,23 +1,27 @@
 const { PostModel } = require("../schema/Post.Schema");
 
-async function CreatePost(title, description) {
+async function UpdatePost(postId, title, description) {
   try {
-    const newPost = new PostModel({
-      title,
-      description,
-    });
+    const updatedPostData = await PostModel.findByIdAndUpdate(
+      postId,
+      {
+        title,
+        description,
+      },
+      {
+        new: true,
+      }
+    );
 
-    const newPostData = await newPost.save();
-
-    if (!newPostData._id) {
+    if (!updatedPostData._id) {
       return {
-        message: "Post not created",
-        statusCode: 400,
+        message: "Post not found",
+        statusCode: 404,
       };
     }
 
     return {
-      message: "Post created successfully",
+      message: "Post updated successfully",
       statusCode: 200,
     };
   } catch (error) {
@@ -32,5 +36,5 @@ async function CreatePost(title, description) {
 }
 
 module.exports = {
-  CreatePost,
+  UpdatePost,
 };
