@@ -3,14 +3,16 @@ const express = require("express");
 const app = express();
 
 const {
-  CreatePostController,
+    CreatePostController,
 } = require("./src/controllers/CreatePost.Controller");
+const {GetAllPostsController} = require("./src/controllers/GetAllPosts.Controller");
 
 app.use(express.json());
 
-app.get("/api/v1/posts", (request, response) => {});
+// Get all posts
+app.get("/api/v1/posts", GetAllPostsController)
+    // Create Post controller
+    .post("/api/v1/posts", CreatePostController);
 
-// Create Post controller
-app.post("/api/v1/posts", CreatePostController);
 
-module.exports = { app };
+module.exports = {app};
