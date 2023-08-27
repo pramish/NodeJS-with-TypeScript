@@ -7,14 +7,15 @@ async function CreatePost(title, description) {
             description
         });
 
-        if (!newPost) {
+        const newPostData = await newPost.save();
+
+        if (!newPostData._id) {
             return {
                 message: "Post not created",
                 statusCode: 400,
             }
         }
 
-        const savedPost = await newPost.save();
 
         return {
             message: "Post created successfully",
