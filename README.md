@@ -46,6 +46,10 @@ yarn start:dev
 
 ### If you're using npm
 
+```
+https://gist.github.com/pramish/86bf98128cd7054eff7c161b6a90740f
+```
+
 ```bash
 npm run start:dev
 ```
