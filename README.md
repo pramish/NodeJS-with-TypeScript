@@ -47,7 +47,38 @@ yarn start:dev
 ### If you're using npm
 
 ```
-https://gist.github.com/pramish/86bf98128cd7054eff7c161b6a90740f
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "CommonJS",
+    "baseUrl": "./src",
+    "outDir": "./dist",
+    "sourceMap": true,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "noImplicitAny": true,
+    "alwaysStrict": true,
+    "strictNullChecks": true,
+    "resolveJsonModule": true,
+  },
+  "lib": [
+    "ESNext",
+    "esnext.asynciterable"
+  ],
+  "typeRoots": [
+    "src/types/*.ts",
+    "./node_modules/@types"
+  ],
+  "include": [
+    "src/**/*.ts",
+    "test/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
 ```
 
 ```bash
