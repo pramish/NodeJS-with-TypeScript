@@ -46,7 +46,8 @@ yarn start:dev
 
 ### If you're using npm
 
-```
+```bash
+
 {
   "compilerOptions": {
     "target": "ESNext",
@@ -85,7 +86,8 @@ yarn start:dev
 npm run start:dev
 ```
 
-```
+```bash
+`Update the package.json with the following start:dev script`
 "nodemon --exec ts-node ./src/server.ts --mode development"
 
 ```
