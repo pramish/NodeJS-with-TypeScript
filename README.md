@@ -85,4 +85,9 @@ yarn start:dev
 npm run start:dev
 ```
 
+```
+"nodemon --exec ts-node ./src/server.ts --mode development"
+
+```
+
 # Happy coding!
